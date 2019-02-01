@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <span>Articles</span>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-button (click)="goToPage2()" slot="end">Voir le cache</ion-button>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <section *ngIf="error===true">
+        <h1>Erreur lors de la récupération des articles, vous serez redirigé vers les articles que vous avez enregistrés.</h1>
+    </section>
+
+    <section *ngIf="error===false">
+        <h4>Articles disponibles en ligne</h4>
+    </section>
+
+    <div class="article" *ngFor="let article of articles">
+        <ion-button expand="full" (click)="openModal(article)">{{article.title}}</ion-button>
+        <p>Accessible en mode hors-ligne:</p>
+        <ion-toggle (ionChange)="updateItem(article)" [checked]="isItemCached(article)"></ion-toggle>
+    </div>
+
+</ion-content>

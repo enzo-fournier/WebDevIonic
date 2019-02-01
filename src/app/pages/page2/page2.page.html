@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <span>Cache</span>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <!--<ion-button (click)="emptyCache()" slot="end">Vider le cache</ion-button>-->
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <section >
+        <h4>Articles stockés dans le cache et disponibles en mode hors-connexion</h4>
+    </section>
+
+    <div class="article" *ngFor="let article of articles">
+        <ion-button expand="full" (click)="openModal(article)">{{article.title}}</ion-button>
+        <p>Accessible en mode hors-ligne:</p>
+        <ion-toggle (ionChange)="updateItem(article)" [checked]="isItemCached(article)"></ion-toggle>
+    </div>
+
+</ion-content>

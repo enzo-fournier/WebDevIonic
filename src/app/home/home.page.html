@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <span>Acceuil</span>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <section *ngIf="!hasId">
+    <ion-item>
+      <ion-label color="primary" floating>Votre identifiant</ion-label>
+      <ion-input name="name" #name></ion-input>
+    </ion-item>
+    <ion-button (click)="saveName(name.value)">Valider</ion-button>
+  </section>
+</ion-content>

@@ -1,0 +1,36 @@
+
+:host {
+
+}
+
+ion-header {
+  background-color: var(--ion-color-light);
+}
+
+ion-content {
+  transform: translate3d(0, 0, 0);
+  text-align: center;
+}
+
+.article {
+  width: 55%;
+  display: inline-block;
+  text-align: left;
+  border: 2px solid dodgerblue;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 15px;
+}
+
+.article>p {
+  display: inline-block;
+}
+
+.article>ion-toggle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.page1 {
+
+}
